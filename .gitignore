@@ -1,5 +1,9 @@
 *.blend1
 *.blend2
 *.blend@
+<<<<<<< HEAD
 __pycache__/
+=======
+pycache/
+>>>>>>> 4c5d927d90c7c1d8e15631bf9c579850d59d87f4
 *.tmp
