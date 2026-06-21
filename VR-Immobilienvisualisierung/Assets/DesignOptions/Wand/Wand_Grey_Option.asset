@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6cd71b905ba5a4b910e8b6a9a37e85, type: 3}
+  m_Name: Wand_Grey_Option
+  m_EditorClassIdentifier: Assembly-CSharp::DesignOption
+  optionName: Wand Grey
+  targetSurfaceType: 0
+  material: {fileID: 2100000, guid: ea851c7282383dd4d96437c3ea2c787b, type: 2}
