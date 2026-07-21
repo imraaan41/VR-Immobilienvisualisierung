@@ -11,4 +11,8 @@ public class DesignOption : ScriptableObject
 
     [Header("Material")]
     public Material material;
+
+    [Header("UI Preview")]
+    public Texture2D previewTexture;
+    public Color previewColor = Color.white;
 }

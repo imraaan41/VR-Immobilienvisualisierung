@@ -32,3 +32,18 @@
 # OS files
 .DS_Store
 Thumbs.db
+
+# Unity recovery files
+VR-Immobilienvisualisierung/Assets/_Recovery/
+
+# Visual Studio / generated project files
+*.sln
+*.slnx
+*.csproj
+.vs/
+
+# Demo recordings
+*.mp4
+*.mkv
+*.mov
+*.avi

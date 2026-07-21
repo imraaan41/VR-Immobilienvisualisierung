@@ -4,64 +4,60 @@ public class MaterialApplyManager : MonoBehaviour
 {
     [Header("References")]
     public SurfaceSelector surfaceSelector;
+    public VRSurfaceSelector vrSurfaceSelector;
 
     public void ApplyDesignOption(DesignOption option)
     {
+        Debug.Log("ApplyDesignOption wurde aufgerufen.");
+
         if (option == null)
         {
             Debug.LogWarning("Keine DesignOption übergeben.");
             return;
         }
 
-        if (surfaceSelector == null)
-        {
-            Debug.LogWarning("SurfaceSelector fehlt im MaterialApplyManager.");
-            return;
-        }
+        SurfaceTarget target = GetCurrentTarget();
 
-        SurfaceTarget selectedTarget = surfaceSelector.currentTarget;
-
-        if (selectedTarget == null)
+        if (target == null)
         {
             Debug.LogWarning("Keine Fläche ausgewählt.");
             return;
         }
 
-        if (selectedTarget.surfaceType != option.targetSurfaceType)
+        if (target.surfaceType != option.targetSurfaceType)
         {
             Debug.LogWarning(
-                "Diese Option passt nicht. Ausgewählt: "
-                + selectedTarget.surfaceType
-                + ", Option ist für: "
-                + option.targetSurfaceType
+                "Falscher Typ. Ausgewählt: " +
+                target.surfaceType +
+                ", Option ist für: " +
+                option.targetSurfaceType
             );
             return;
         }
 
-        selectedTarget.ApplyMaterial(option.material);
+        if (option.material == null)
+        {
+            Debug.LogWarning("Kein Material in DesignOption: " + option.optionName);
+            return;
+        }
 
-        Debug.Log(
-            "Material angewendet: "
-            + option.optionName
-            + " auf "
-            + selectedTarget.displayName
-        );
+        target.ApplyMaterial(option.material);
+
+        Debug.Log("Material angewendet: " + option.optionName + " auf " + target.displayName);
     }
 
-    public void ResetSelectedMaterial()
+    private SurfaceTarget GetCurrentTarget()
     {
-        if (surfaceSelector == null)
+        if (vrSurfaceSelector != null && vrSurfaceSelector.currentTarget != null)
         {
-            Debug.LogWarning("SurfaceSelector fehlt im MaterialApplyManager.");
-            return;
+            return vrSurfaceSelector.currentTarget;
         }
 
-        if (surfaceSelector.currentTarget == null)
+        if (surfaceSelector != null && surfaceSelector.currentTarget != null)
         {
-            Debug.LogWarning("Keine Fläche ausgewählt.");
-            return;
+            return surfaceSelector.currentTarget;
         }
 
-        surfaceSelector.currentTarget.ResetMaterial();
+        return null;
     }
 }
