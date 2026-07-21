@@ -1,0 +1,49 @@
+# Unity generated folders
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Tt]emp/**
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+
+# Unity cache / recordings
+**/MemoryCaptures/
+**/Recordings/
+
+# IDE folders
+.vs/
+.vscode/
+.idea/
+
+# Generated Unity / Visual Studio files
+*.csproj
+*.sln
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Unity recovery files
+VR-Immobilienvisualisierung/Assets/_Recovery/
+
+# Visual Studio / generated project files
+*.sln
+*.slnx
+*.csproj
+.vs/
+
+# Demo recordings
+*.mp4
+*.mkv
+*.mov
+*.avi
